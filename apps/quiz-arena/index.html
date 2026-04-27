@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Arena | English Teacher's Toolbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="qa-topbar">
+    <a href="../../index.html" class="qa-back" title="戻る">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <span>ツールボックスへ</span>
+    </a>
+    <div class="qa-brand">
+      <span class="qa-logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+      </span>
+      <span class="qa-brand-text">Quiz Arena</span>
+    </div>
+    <button id="muteBtn" class="qa-icon-btn" title="サウンド">
+      <svg id="muteIconOn" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+      <svg id="muteIconOff" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    </button>
+  </header>
+
+  <main class="qa-app">
+    <!-- ============= HOME SCREEN ============= -->
+    <section id="screen-home" class="qa-screen is-active">
+      <div class="qa-home">
+        <div class="qa-hero">
+          <div class="qa-hero-glow"></div>
+          <h1 class="qa-hero-title">
+            <span class="qa-title-line-1">QUIZ</span>
+            <span class="qa-title-line-2">ARENA</span>
+          </h1>
+          <p class="qa-hero-tagline">教室を熱狂の渦に — Beat Kahoot.</p>
+        </div>
+
+        <div class="qa-home-grid">
+          <button class="qa-tile qa-tile-primary" data-action="play">
+            <div class="qa-tile-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21 6 3"></polygon></svg>
+            </div>
+            <div class="qa-tile-text">
+              <h3>クイックプレイ</h3>
+              <p>テンプレート or 自作のクイズですぐ遊ぶ</p>
+            </div>
+          </button>
+
+          <button class="qa-tile" data-action="create">
+            <div class="qa-tile-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <div class="qa-tile-text">
+              <h3>クイズ作成</h3>
+              <p>4種類の問題形式で自由に作成</p>
+            </div>
+          </button>
+
+          <button class="qa-tile" data-action="library">
+            <div class="qa-tile-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="qa-tile-text">
+              <h3>ライブラリ</h3>
+              <p>保存済みクイズを編集・削除</p>
+            </div>
+          </button>
+
+          <button class="qa-tile" data-action="how">
+            <div class="qa-tile-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div class="qa-tile-text">
+              <h3>遊び方</h3>
+              <p>ルール・パワーアップ解説</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="qa-features">
+          <div class="qa-feature"><span class="qa-feature-emoji">⚡</span><div><strong>スピード勝負</strong><br />速さで得点UP</div></div>
+          <div class="qa-feature"><span class="qa-feature-emoji">🔥</span><div><strong>コンボシステム</strong><br />連続正解で倍率UP</div></div>
+          <div class="qa-feature"><span class="qa-feature-emoji">💎</span><div><strong>パワーアップ</strong><br />50/50・タイム停止・ダブル</div></div>
+          <div class="qa-feature"><span class="qa-feature-emoji">👥</span><div><strong>チーム戦対応</strong><br />最大8チーム</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= QUIZ SELECT ============= -->
+    <section id="screen-select" class="qa-screen">
+      <div class="qa-container">
+        <button class="qa-back-btn" data-goto="home">← 戻る</button>
+        <h2 class="qa-screen-title">クイズを選択</h2>
+        <p class="qa-screen-subtitle">テンプレートまたは自作クイズから選びます</p>
+
+        <div class="qa-section-label">テンプレート</div>
+        <div id="templateList" class="qa-quiz-list"></div>
+
+        <div class="qa-section-label">自作クイズ</div>
+        <div id="customList" class="qa-quiz-list"></div>
+      </div>
+    </section>
+
+    <!-- ============= PLAYER SETUP ============= -->
+    <section id="screen-players" class="qa-screen">
+      <div class="qa-container">
+        <button class="qa-back-btn" data-goto="select">← 戻る</button>
+        <h2 class="qa-screen-title">プレイヤー設定</h2>
+        <p class="qa-screen-subtitle">プレイヤーを追加してゲーム開始 (最大8人)</p>
+
+        <div id="playerList" class="qa-player-list"></div>
+
+        <div class="qa-player-add">
+          <input type="text" id="playerNameInput" placeholder="プレイヤー名 / Team name" maxlength="20" />
+          <button id="addPlayerBtn" class="qa-btn qa-btn-secondary">追加</button>
+        </div>
+
+        <div class="qa-quiz-summary">
+          <div>
+            <div class="qa-summary-label">選択中のクイズ</div>
+            <div id="selectedQuizName" class="qa-summary-value">—</div>
+          </div>
+          <div>
+            <div class="qa-summary-label">問題数</div>
+            <div id="selectedQuizCount" class="qa-summary-value">—</div>
+          </div>
+        </div>
+
+        <button id="startGameBtn" class="qa-btn qa-btn-primary qa-btn-large" disabled>
+          ゲーム開始
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 21 12 6 21 6 3"></polygon></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============= GAMEPLAY ============= -->
+    <section id="screen-game" class="qa-screen">
+      <!-- HUD -->
+      <div class="qa-hud">
+        <div class="qa-hud-left">
+          <div class="qa-question-count">
+            <span id="qNow">1</span>/<span id="qTotal">10</span>
+          </div>
+        </div>
+        <div class="qa-hud-center">
+          <div class="qa-timer">
+            <svg viewBox="0 0 100 100" class="qa-timer-svg">
+              <circle cx="50" cy="50" r="45" class="qa-timer-bg" />
+              <circle cx="50" cy="50" r="45" class="qa-timer-progress" id="timerCircle" />
+            </svg>
+            <span class="qa-timer-text" id="timerText">20</span>
+          </div>
+        </div>
+        <div class="qa-hud-right">
+          <div class="qa-current-player">
+            <div class="qa-current-player-label">現在のターン</div>
+            <div class="qa-current-player-name" id="currentPlayerName">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Power-ups -->
+      <div class="qa-powerups" id="powerupBar"></div>
+
+      <!-- Question card -->
+      <div class="qa-question-card">
+        <div class="qa-question-type" id="questionType">MULTIPLE CHOICE</div>
+        <h2 class="qa-question-text" id="questionText">Question goes here</h2>
+        <div class="qa-question-image" id="questionImage" style="display:none"></div>
+      </div>
+
+      <!-- Answers -->
+      <div class="qa-answers" id="answersContainer"></div>
+
+      <!-- Combo display -->
+      <div class="qa-combo" id="comboDisplay"></div>
+
+      <!-- Feedback overlay -->
+      <div class="qa-feedback" id="feedbackOverlay">
+        <div class="qa-feedback-content">
+          <div class="qa-feedback-icon" id="feedbackIcon"></div>
+          <div class="qa-feedback-title" id="feedbackTitle"></div>
+          <div class="qa-feedback-points" id="feedbackPoints"></div>
+          <div class="qa-feedback-correct" id="feedbackCorrect"></div>
+          <button class="qa-btn qa-btn-primary" id="nextQuestionBtn">次の問題 →</button>
+        </div>
+      </div>
+
+      <!-- Live scoreboard -->
+      <div class="qa-scoreboard" id="scoreboard"></div>
+    </section>
+
+    <!-- ============= RESULTS ============= -->
+    <section id="screen-results" class="qa-screen">
+      <div class="qa-container">
+        <h2 class="qa-results-title">🏆 結果発表</h2>
+        <div class="qa-podium" id="podium"></div>
+        <div class="qa-results-list" id="resultsList"></div>
+        <div class="qa-results-actions">
+          <button class="qa-btn qa-btn-secondary" data-goto="home">ホームへ</button>
+          <button class="qa-btn qa-btn-primary" id="playAgainBtn">もう一度プレイ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= EDITOR ============= -->
+    <section id="screen-editor" class="qa-screen">
+      <div class="qa-container qa-container-wide">
+        <button class="qa-back-btn" data-goto="home">← 戻る</button>
+        <h2 class="qa-screen-title">クイズ作成</h2>
+
+        <div class="qa-editor-meta">
+          <label class="qa-field">
+            <span>クイズ名</span>
+            <input type="text" id="editQuizName" placeholder="例: 中1 過去形クイズ" />
+          </label>
+          <label class="qa-field">
+            <span>説明 (任意)</span>
+            <input type="text" id="editQuizDesc" placeholder="例: be動詞・一般動詞の過去形" />
+          </label>
+        </div>
+
+        <div id="editorQuestions" class="qa-editor-questions"></div>
+
+        <div class="qa-editor-actions">
+          <div class="qa-add-question-menu">
+            <button class="qa-btn qa-btn-secondary" data-add-type="multiple">+ 4択</button>
+            <button class="qa-btn qa-btn-secondary" data-add-type="truefalse">+ ○×</button>
+            <button class="qa-btn qa-btn-secondary" data-add-type="typed">+ 記述</button>
+            <button class="qa-btn qa-btn-secondary" data-add-type="order">+ 並べ替え</button>
+          </div>
+          <button id="saveQuizBtn" class="qa-btn qa-btn-primary qa-btn-large">クイズを保存</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============= HOW TO PLAY ============= -->
+    <section id="screen-how" class="qa-screen">
+      <div class="qa-container">
+        <button class="qa-back-btn" data-goto="home">← 戻る</button>
+        <h2 class="qa-screen-title">遊び方</h2>
+
+        <div class="qa-how-grid">
+          <div class="qa-how-card">
+            <div class="qa-how-num">1</div>
+            <h3>クイズを選ぶ</h3>
+            <p>テンプレートから選ぶか、「クイズ作成」で自分で作ります。語彙・文法・リスニングなど、4種類の問題形式に対応。</p>
+          </div>
+          <div class="qa-how-card">
+            <div class="qa-how-num">2</div>
+            <h3>プレイヤーを追加</h3>
+            <p>個人 or チーム名を最大8人まで追加。順番にデバイスを回しながらプレイします。</p>
+          </div>
+          <div class="qa-how-card">
+            <div class="qa-how-num">3</div>
+            <h3>速さ × 正確さ</h3>
+            <p>正解で <strong>1000pt</strong>、速いほど高得点。連続正解は<strong>コンボ倍率</strong>がかかります (×2, ×3...)。</p>
+          </div>
+          <div class="qa-how-card">
+            <div class="qa-how-num">4</div>
+            <h3>パワーアップを使う</h3>
+            <p>各プレイヤーは1ゲームに各1回ずつ使えます:</p>
+            <ul class="qa-how-list">
+              <li><strong>50/50</strong> — 不正解を2つ消す (4択のみ)</li>
+              <li><strong>⏱ Time Freeze</strong> — タイマーを5秒停止</li>
+              <li><strong>×2 Double</strong> — 次の正解の得点を2倍</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Confetti canvas -->
+  <canvas id="confettiCanvas" class="qa-confetti"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
