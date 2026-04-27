@@ -1404,15 +1404,42 @@ input, select, textarea { font-family: inherit; }
   z-index: 300;
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  .qa-home-grid { grid-template-columns: repeat(2, 1fr); }
+  .qa-features { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* Mobile */
 @media (max-width: 640px) {
+  .qa-topbar { padding: 12px 14px; gap: 8px; }
+  .qa-back span { display: none; }                /* hide "ツールボックスへ" text, keep arrow */
+  .qa-back { padding: 8px 10px; }
+  .qa-brand-text { font-size: 16px; }
+  .qa-icon-btn { padding: 8px 10px; }
+
   .qa-screen { padding: 24px 16px 60px; }
   .qa-hud { grid-template-columns: 1fr; gap: 16px; }
   .qa-hud-left, .qa-hud-right { text-align: center; }
   .qa-question-card { padding: 28px 20px; }
+  .qa-question-text { font-size: 22px; }
   .qa-answers { grid-template-columns: 1fr; }
+  .qa-answer { min-height: 70px; padding: 18px 20px; font-size: 16px; }
   .qa-editor-meta { grid-template-columns: 1fr; }
   .qa-q-options { grid-template-columns: 1fr; }
   .qa-podium { gap: 8px; }
   .qa-podium-rank-1 .qa-podium-avatar { width: 80px; height: 80px; font-size: 28px; }
+
+  .qa-home-grid { grid-template-columns: 1fr; }
+  .qa-features { grid-template-columns: 1fr; }
+  .qa-tile { padding: 22px 20px; }
+
+  .qa-powerups { gap: 8px; }
+  .qa-powerup { padding: 8px 14px; font-size: 12px; }
+
+  .qa-scoreboard { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 380px) {
+  .qa-scoreboard { grid-template-columns: 1fr; }
 }
