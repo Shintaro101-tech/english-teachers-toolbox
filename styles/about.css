@@ -59,16 +59,16 @@
 /* Profile photo */
 .profile-photo {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
   background: linear-gradient(135deg, var(--color-ocean) 0%, var(--color-teal) 50%, var(--color-coral) 100%);
   box-shadow:
-    0 24px 56px rgba(10, 37, 64, 0.25),
-    0 8px 16px rgba(10, 37, 64, 0.15),
-    inset 0 0 0 6px rgba(255, 255, 255, 0.30);
+    0 20px 44px rgba(10, 37, 64, 0.22),
+    0 6px 14px rgba(10, 37, 64, 0.12),
+    inset 0 0 0 5px rgba(255, 255, 255, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +87,7 @@
 .profile-initials {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 90px;
+  font-size: 70px;
   letter-spacing: -0.02em;
   color: white;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.20);
@@ -98,8 +98,8 @@
 .profile-photo.no-photo img { display: none; }
 
 @media (max-width: 760px) {
-  .profile-photo { width: 200px; height: 200px; }
-  .profile-initials { font-size: 70px; }
+  .profile-photo { width: 160px; height: 160px; }
+  .profile-initials { font-size: 56px; }
 }
 
 /* Profile text */
