@@ -23,6 +23,25 @@
   targets.forEach((el) => observer.observe(el));
 })();
 
+// Visitor counter (hits + display via free public API)
+(() => {
+  const counter = document.getElementById('visitorCounter');
+  const count = document.getElementById('visitorCount');
+  if (!counter || !count) return;
+
+  fetch('https://abacus.jasoncameron.dev/hit/english-teachers-toolbox/visits')
+    .then((r) => r.ok ? r.json() : Promise.reject())
+    .then((data) => {
+      if (data && typeof data.value === 'number') {
+        count.textContent = data.value.toLocaleString('en-US');
+        counter.hidden = false;
+      }
+    })
+    .catch(() => {
+      // silent: keep hidden so the slot stays clean
+    });
+})();
+
 // Mobile nav toggle (hamburger)
 (() => {
   const toggle = document.querySelector('.nav-toggle');
